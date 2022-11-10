@@ -34,6 +34,7 @@ class Discriminator(nn.Module):
         )
 
     def forward(self, x):
+        x = x.view(x.shape[0], -1)
         out = self.main(x)
         return self.fc(out)
 
