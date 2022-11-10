@@ -9,7 +9,6 @@ class Discriminator(nn.Module):
         self.n_classes = n_classes
         self.n_features = int(n_features**2)
         self.h_layers = sorted(h_layers, reverse=True)
-        print(self.h_layers)
 
         linear_layers = nn.ModuleList(
             nn.Sequential(
