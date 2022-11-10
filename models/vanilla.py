@@ -50,7 +50,8 @@ class Generator(nn.Module):
         linear_layers = nn.ModuleList(
             nn.Sequential(
                 nn.Linear(self.n_features, self.h_layers[0]),
-                nn.ReLU()
+                # nn.ReLU()
+                nn.LeakyReLU(0.2)
             )
         )
 
@@ -58,7 +59,8 @@ class Generator(nn.Module):
             linear_layers.append(
                 nn.Sequential(
                     nn.Linear(self.h_layers[i], self.h_layers[i+1]),
-                    nn.ReLU()
+                    # nn.ReLU()
+                    nn.LeakyReLU(0.2)
                 )
             )
 
